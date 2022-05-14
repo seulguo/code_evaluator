@@ -5,11 +5,10 @@ from django.db import models
 class User(AbstractUser):
     identifier_id = models.CharField('Identifier ID', max_length=10, null=True)
     email = models.EmailField('Email', unique=True)
-    # first_name = models.CharField('Name', max_length=150, blank=True)
+    username = models.CharField('Name', max_length=150, blank=True)
 
-    username = None
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['name']
+    USERNAME_FIELD = 'username'
+    REQUIRED_FIELDS = []
 
     class Meta:
         verbose_name = 'User'
