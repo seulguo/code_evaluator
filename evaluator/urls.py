@@ -8,4 +8,6 @@ urlpatterns = [
     path('students/', StudentList.as_view(), ),
     path('upload/', AssignmentUpload.as_view(), ),
     path('result/', EvaluationResult.as_view(), ),
+    path('logout/', Logout.as_view(), ),
+    path('class/', ClassDetail.as_view(),)
 ]

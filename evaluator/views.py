@@ -47,11 +47,43 @@ class StudentList(LoginRequiredMixin, ListView):
         return context
 
 
-class AssignmentUpload(LoginRequiredMixin, FormView):
+class AssignmentUpload(LoginRequiredMixin, ListView):
     template_name = 'evaluator/assignment_upload.html'
-    form_class = None
+    queryset = []
+
+# class AssignmentUpload(LoginRequiredMixin, FormView):
+#     template_name = 'evaluator/assignment_upload.html'
+#     form_class = None
 
 
-class EvaluationResult(LoginRequiredMixin, DetailView):
+class EvaluationResult(LoginRequiredMixin, ListView):
     template_name = 'evaluator/evaluation_result.html'
-    object = None
+    queryset = []
+
+# class EvaluationResult(LoginRequiredMixin, DetailView):
+#     template_name = 'evaluator/evaluation_result.html'
+#     object = None
+
+class Logout(LoginRequiredMixin, ListView):
+    template_name = 'account/logout.html'
+    queryset = []
+
+
+class ClassDetail(LoginRequiredMixin, ListView):
+    template_name = 'evaluator/class_detail.html'
+    queryset = []
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        students = [
+            {
+                'title': 'Assignment1',
+                'duedate': '2022/05/29',
+                'activate': 'active',
+                'result': 'show result',
+            },
+        ]
+
+        context['students'] = students
+        return context
+

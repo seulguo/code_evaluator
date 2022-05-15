@@ -304,12 +304,10 @@
                   <label class="custom-control-label" for="datatableCheckAll"></label>
                 </div>
               </th>
-              <th class="table-column-pl-0">Class</th>
-              <th>Submissions</th>
-              <th>Members</th>
-{#              <th>Status</th>#}
-              <th>Completion</th>
-              <th>Upcoming due</th>
+              <th class="table-column-pl-0">CLASS</th>
+              <th>INSTRUCTOR</th>
+              <th>CREATED</th>
+              <th>STATUS</th>
             </tr>
             </thead>
 
@@ -323,7 +321,7 @@
                 </div>
               </td>
               <td class="table-column-pl-0">
-                <a class="d-flex align-items-center" href="project.html">
+                <a class="d-flex align-items-center" href="class/">
 {#                  <img class="avatar" src="{% static 'svg/brands/guideline.svg' %}" alt="Image Description">#}
                   <div class="ml-3">
                     <span class="d-block h5 text-hover-primary mb-0">{{ object.name }}</span>
@@ -339,35 +337,11 @@
               </td>
               <td>
                 <!-- Avatar Group -->
-                <div class="avatar-group avatar-group-xs avatar-circle">
-                  <a class="avatar" href="user-profile.html" data-toggle="tooltip" data-placement="top"
-                     title="Ella Lauda">
-                    <img class="avatar-img" src="{% static 'img/160x160/img9.jpg' %}" alt="Image Description">
-                  </a>
-                  <a class="avatar" href="user-profile.html" data-toggle="tooltip" data-placement="top"
-                     title="David Harrison">
-                    <img class="avatar-img" src="{% static 'img/160x160/img3.jpg' %}" alt="Image Description">
-                  </a>
-                  <a class="avatar avatar-soft-dark" href="user-profile.html" data-toggle="tooltip" data-placement="top"
-                     title="Antony Taylor">
-                    <span class="avatar-initials">A</span>
-                  </a>
-                  <a class="avatar avatar-soft-info" href="user-profile.html" data-toggle="tooltip" data-placement="top"
-                     title="Sara Iwens">
-                    <span class="avatar-initials">S</span>
-                  </a>
-                  <a class="avatar" href="user-profile.html" data-toggle="tooltip" data-placement="top"
-                     title="Finch Hoot">
-                    <img class="avatar-img" src="{% static 'img/160x160/img5.jpg' %}" alt="Image Description">
-                  </a>
-                </div>
+                  <span class="d-block h5 text-hover-primary mb-0">{{ object.created }}</span>
                 <!-- End Avatar Group -->
               </td>
               <td>
                 <span class="legend-indicator"></span>Upcoming
-              </td>
-
-              <td>May 29</td>
             </tr>
             {% endfor %}
 
@@ -425,6 +399,7 @@
 
 
     <!-- End Footer -->
+<img class="navbar-brand-logo" src="logo.png"> </img>
   </main>
   <!-- ========== END MAIN CONTENT ========== -->
 
@@ -1121,6 +1096,7 @@
           </form>
           <!-- End Step Form -->
         </div>
+
         <!-- End Body -->
       </div>
     </div>
